@@ -1,0 +1,23 @@
+{
+  "name": "dappstarter",
+  "version": "1.0.0",
+  "description": "A descentralized Kickstarter version",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seb7887/dappstarter.git"
+  },
+  "author": "Sebastian Matias Segura (@seb7887)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seb7887/dappstarter/issues"
+  },
+  "homepage": "https://github.com/seb7887/dappstarter#readme",
+  "devDependencies": {
+    "prettier": "^1.19.1",
+    "truffle": "^5.1.6"
+  }
+}
