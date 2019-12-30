@@ -1,0 +1,104 @@
+{
+  "contractName": "CampaignFactory",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/seb/Github/dappstarter/contracts/CampaignFactory.sol\":\"CampaignFactory\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/seb/Github/dappstarter/contracts/CampaignFactory.sol\":{\"keccak256\":\"0xb10fccd26e16ffa4e494239788d3bb35d53bf04db7eb66f2ca3e4cc8875ad5ee\",\"urls\":[\"bzz-raw://e4dbf68027eb8267a22091a9eb599bc4104b7c45fef5088e5ece65bd7997c6da\",\"dweb:/ipfs/QmNY476Lot1pPQX4vjADEvfK5jSBWMgBveRVwC1GacZ3nx\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158203f4fc8da5eebc03ff2411b6b30186ab0e91e5c25a66055cb9f9455104deffa4e64736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158203f4fc8da5eebc03ff2411b6b30186ab0e91e5c25a66055cb9f9455104deffa4e64736f6c634300050c0032",
+  "sourceMap": "25:31:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:31:1;;;;;;;",
+  "deployedSourceMap": "25:31:1:-;;;;;",
+  "source": "pragma solidity^0.5.11;\n\ncontract CampaignFactory {\n  \n}",
+  "sourcePath": "/home/seb/Github/dappstarter/contracts/CampaignFactory.sol",
+  "ast": {
+    "absolutePath": "/home/seb/Github/dappstarter/contracts/CampaignFactory.sol",
+    "exportedSymbols": {
+      "CampaignFactory": [
+        236
+      ]
+    },
+    "id": 237,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 235,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 236,
+        "linearizedBaseContracts": [
+          236
+        ],
+        "name": "CampaignFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 237,
+        "src": "25:31:1"
+      }
+    ],
+    "src": "0:56:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/seb/Github/dappstarter/contracts/CampaignFactory.sol",
+    "exportedSymbols": {
+      "CampaignFactory": [
+        236
+      ]
+    },
+    "id": 237,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 235,
+        "literals": [
+          "solidity",
+          "^",
+          "0.5",
+          ".11"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:23:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 236,
+        "linearizedBaseContracts": [
+          236
+        ],
+        "name": "CampaignFactory",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 237,
+        "src": "25:31:1"
+      }
+    ],
+    "src": "0:56:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.20",
+  "updatedAt": "2019-12-30T20:55:47.960Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
