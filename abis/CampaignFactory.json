@@ -1,21 +1,73 @@
 {
   "contractName": "CampaignFactory",
-  "abi": [],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/seb/Github/dappstarter/contracts/CampaignFactory.sol\":\"CampaignFactory\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/seb/Github/dappstarter/contracts/CampaignFactory.sol\":{\"keccak256\":\"0xb10fccd26e16ffa4e494239788d3bb35d53bf04db7eb66f2ca3e4cc8875ad5ee\",\"urls\":[\"bzz-raw://e4dbf68027eb8267a22091a9eb599bc4104b7c45fef5088e5ece65bd7997c6da\",\"dweb:/ipfs/QmNY476Lot1pPQX4vjADEvfK5jSBWMgBveRVwC1GacZ3nx\"]}},\"version\":1}",
-  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158203f4fc8da5eebc03ff2411b6b30186ab0e91e5c25a66055cb9f9455104deffa4e64736f6c634300050c0032",
-  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158203f4fc8da5eebc03ff2411b6b30186ab0e91e5c25a66055cb9f9455104deffa4e64736f6c634300050c0032",
-  "sourceMap": "25:31:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;25:31:1;;;;;;;",
-  "deployedSourceMap": "25:31:1:-;;;;;",
-  "source": "pragma solidity^0.5.11;\n\ncontract CampaignFactory {\n  \n}",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "deployedCampaigns",
+      "outputs": [
+        {
+          "internalType": "contract Campaign",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_minimum",
+          "type": "uint256"
+        }
+      ],
+      "name": "createCampaign",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDeployedCampaigns",
+      "outputs": [
+        {
+          "internalType": "contract Campaign[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_minimum\",\"type\":\"uint256\"}],\"name\":\"createCampaign\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"deployedCampaigns\",\"outputs\":[{\"internalType\":\"contract Campaign\",\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getDeployedCampaigns\",\"outputs\":[{\"internalType\":\"contract Campaign[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/home/seb/Github/dappstarter/contracts/CampaignFactory.sol\":\"CampaignFactory\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/home/seb/Github/dappstarter/contracts/Campaign.sol\":{\"keccak256\":\"0x6ad0da7dbe4c967a67691e61e44e32de451b25d82656d9568072405dbd645ccf\",\"urls\":[\"bzz-raw://39390a8a860ddb02781de133b6090e7bdc369df806b418673d4056422da48749\",\"dweb:/ipfs/QmWbTo7U1tjYXxKBN9g9vFGYCiJfLVbX3DCC4y2UHrk5rH\"]},\"/home/seb/Github/dappstarter/contracts/CampaignFactory.sol\":{\"keccak256\":\"0x3df4f2fdc0a4362115023d1993cfef742a6cb57a791dab024bde991bb627ae59\",\"urls\":[\"bzz-raw://4384a2064122dd6c32e4b98429498836ef9fa455d411d2ab17cee5df46d9a885\",\"dweb:/ipfs/Qmdeg23Kox3J9YBuf2joX1yikp2GfRQrqQ4FKjqLcDXxAg\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b50610d10806100206000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063339d50a5146100465780634acb9d4f1461007f578063a3303a75146100d7575b600080fd5b6100636004803603602081101561005c57600080fd5b50356100f6565b604080516001600160a01b039092168252519081900360200190f35b61008761011d565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100c35781810151838201526020016100ab565b505050509050019250505060405180910390f35b6100f4600480360360208110156100ed57600080fd5b503561017f565b005b6000818154811061010357fe5b6000918252602090912001546001600160a01b0316905081565b6060600080548060200260200160405190810160405280929190818152602001828054801561017557602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610157575b5050505050905090565b6000813360405161018f90610211565b9182526001600160a01b03166020820152604080519182900301906000f0801580156101bf573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b03929092169190911790555050565b610abd8061021f8339019056fe608060405234801561001057600080fd5b50604051610abd380380610abd8339818101604052604081101561003357600080fd5b508051602090910151600180546001600160a01b0319166001600160a01b03909216919091179055600255610a508061006d6000396000f3fe60806040526004361061009c5760003560e01c806381d12c581161006457806381d12c58146101b557806382fde093146102895780638a9cfd551461029e578063937e09b11461035f578063d7bb99ba14610374578063d7d1bbdb1461037c5761009c565b806303441006146100a15780630a144391146100cd5780633410452a146101145780634051ddac1461013b578063481c6a7514610184575b600080fd5b3480156100ad57600080fd5b506100cb600480360360208110156100c457600080fd5b50356103a6565b005b3480156100d957600080fd5b50610100600480360360208110156100f057600080fd5b50356001600160a01b0316610532565b604080519115158252519081900360200190f35b34801561012057600080fd5b50610129610547565b60408051918252519081900360200190f35b34801561014757600080fd5b5061015061054e565b6040805195865260208601949094528484019290925260608401526001600160a01b03166080830152519081900360a00190f35b34801561019057600080fd5b5061019961056b565b604080516001600160a01b039092168252519081900360200190f35b3480156101c157600080fd5b506101df600480360360208110156101d857600080fd5b503561057a565b6040518080602001868152602001856001600160a01b03166001600160a01b0316815260200184151515158152602001838152602001828103825287818151815260200191508051906020019080838360005b8381101561024a578181015183820152602001610232565b50505050905090810190601f1680156102775780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b34801561029557600080fd5b50610129610653565b3480156102aa57600080fd5b506100cb600480360360608110156102c157600080fd5b8101906020810181356401000000008111156102dc57600080fd5b8201836020820111156102ee57600080fd5b8035906020019184600183028401116401000000008311171561031057600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955050823593505050602001356001600160a01b0316610659565b34801561036b57600080fd5b506101296107a0565b6100cb6107a6565b34801561038857600080fd5b506100cb6004803603602081101561039f57600080fd5b5035610824565b6001546001600160a01b03163314610401576040805162461bcd60e51b815260206004820152601960248201527829b2b73232b91034b9903737ba103a34329036b0b730b3b2b960391b604482015290519081900360640190fd5b600080828154811061040f57fe5b9060005260206000209060050201905060026003548161042b57fe5b04816003015411610479576040805162461bcd60e51b8152602060048201526013602482015272131bddd95c88185c1c1c9bdd985b10dbdd5b9d606a1b604482015290519081900360640190fd5b6002810154600160a01b900460ff16156104da576040805162461bcd60e51b815260206004820152601860248201527f52657175657374206d75737420626520636f6d706c6574650000000000000000604482015290519081900360640190fd5b600281015460018201546040516001600160a01b039092169181156108fc0291906000818181858888f1935050505015801561051a573d6000803e3d6000fd5b50600201805460ff60a01b1916600160a01b17905550565b60046020526000908152604090205460ff1681565b6000545b90565b60025460005460035460015492933031936001600160a01b031690565b6001546001600160a01b031681565b6000818154811061058757fe5b60009182526020918290206005919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919350918391908301828280156106205780601f106105f557610100808354040283529160200191610620565b820191906000526020600020905b81548152906001019060200180831161060357829003601f168201915b5050505060018301546002840154600390940154929390926001600160a01b0382169250600160a01b90910460ff169085565b60035481565b6001546001600160a01b031633146106b4576040805162461bcd60e51b815260206004820152601960248201527829b2b73232b91034b9903737ba103a34329036b0b730b3b2b960391b604482015290519081900360640190fd5b6106bc610927565b506040805160a08101825284815260208082018590526001600160a01b03841692820192909252600060608201819052608082018190528054600181018083559180528251805193949293859360059093027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563019261073f928492910190610961565b5060208201516001820155604082015160028201805460608501511515600160a01b0260ff60a01b196001600160a01b039094166001600160a01b031990921691909117929092169190911790556080909101516003909101555050505050565b60025481565b60025434116107fc576040805162461bcd60e51b815260206004820181905260248201527f4d696e696d756d20636f6e747269627574696f6e206973207265717569726564604482015290519081900360640190fd5b336000908152600460205260409020805460ff19166001908117909155600380549091019055565b600080828154811061083257fe5b6000918252602080832033845260049091526040909220546005909102909101915060ff166108a8576040805162461bcd60e51b815260206004820152601d60248201527f53656e646572206e6f742065786973747320617320617070726f766572000000604482015290519081900360640190fd5b33600090815260048201602052604090205460ff16156108f95760405162461bcd60e51b81526004018080602001828103825260228152602001806109fa6022913960400191505060405180910390fd5b3360009081526004820160205260409020805460ff1916600190811790915560039091018054909101905550565b6040518060a00160405280606081526020016000815260200160006001600160a01b03168152602001600015158152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106109a257805160ff19168380011785556109cf565b828001600101855582156109cf579182015b828111156109cf5782518255916020019190600101906109b4565b506109db9291506109df565b5090565b61054b91905b808211156109db57600081556001016109e556fe53656e6465722065786973747320696e207265717565737420617070726f76616c73a265627a7a72315820e949b9d6d6887b994112541e8b66c87f40ddbbac30644ba5d7259088a1cf498064736f6c634300050c0032a265627a7a72315820722809882ec567784987b598e34c4013b88a625f609ed2b493ab4bcea62e182364736f6c634300050c0032",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063339d50a5146100465780634acb9d4f1461007f578063a3303a75146100d7575b600080fd5b6100636004803603602081101561005c57600080fd5b50356100f6565b604080516001600160a01b039092168252519081900360200190f35b61008761011d565b60408051602080825283518183015283519192839290830191858101910280838360005b838110156100c35781810151838201526020016100ab565b505050509050019250505060405180910390f35b6100f4600480360360208110156100ed57600080fd5b503561017f565b005b6000818154811061010357fe5b6000918252602090912001546001600160a01b0316905081565b6060600080548060200260200160405190810160405280929190818152602001828054801561017557602002820191906000526020600020905b81546001600160a01b03168152600190910190602001808311610157575b5050505050905090565b6000813360405161018f90610211565b9182526001600160a01b03166020820152604080519182900301906000f0801580156101bf573d6000803e3d6000fd5b50600080546001810182559080527f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e5630180546001600160a01b0319166001600160a01b03929092169190911790555050565b610abd8061021f8339019056fe608060405234801561001057600080fd5b50604051610abd380380610abd8339818101604052604081101561003357600080fd5b508051602090910151600180546001600160a01b0319166001600160a01b03909216919091179055600255610a508061006d6000396000f3fe60806040526004361061009c5760003560e01c806381d12c581161006457806381d12c58146101b557806382fde093146102895780638a9cfd551461029e578063937e09b11461035f578063d7bb99ba14610374578063d7d1bbdb1461037c5761009c565b806303441006146100a15780630a144391146100cd5780633410452a146101145780634051ddac1461013b578063481c6a7514610184575b600080fd5b3480156100ad57600080fd5b506100cb600480360360208110156100c457600080fd5b50356103a6565b005b3480156100d957600080fd5b50610100600480360360208110156100f057600080fd5b50356001600160a01b0316610532565b604080519115158252519081900360200190f35b34801561012057600080fd5b50610129610547565b60408051918252519081900360200190f35b34801561014757600080fd5b5061015061054e565b6040805195865260208601949094528484019290925260608401526001600160a01b03166080830152519081900360a00190f35b34801561019057600080fd5b5061019961056b565b604080516001600160a01b039092168252519081900360200190f35b3480156101c157600080fd5b506101df600480360360208110156101d857600080fd5b503561057a565b6040518080602001868152602001856001600160a01b03166001600160a01b0316815260200184151515158152602001838152602001828103825287818151815260200191508051906020019080838360005b8381101561024a578181015183820152602001610232565b50505050905090810190601f1680156102775780820380516001836020036101000a031916815260200191505b50965050505050505060405180910390f35b34801561029557600080fd5b50610129610653565b3480156102aa57600080fd5b506100cb600480360360608110156102c157600080fd5b8101906020810181356401000000008111156102dc57600080fd5b8201836020820111156102ee57600080fd5b8035906020019184600183028401116401000000008311171561031057600080fd5b91908080601f01602080910402602001604051908101604052809392919081815260200183838082843760009201919091525092955050823593505050602001356001600160a01b0316610659565b34801561036b57600080fd5b506101296107a0565b6100cb6107a6565b34801561038857600080fd5b506100cb6004803603602081101561039f57600080fd5b5035610824565b6001546001600160a01b03163314610401576040805162461bcd60e51b815260206004820152601960248201527829b2b73232b91034b9903737ba103a34329036b0b730b3b2b960391b604482015290519081900360640190fd5b600080828154811061040f57fe5b9060005260206000209060050201905060026003548161042b57fe5b04816003015411610479576040805162461bcd60e51b8152602060048201526013602482015272131bddd95c88185c1c1c9bdd985b10dbdd5b9d606a1b604482015290519081900360640190fd5b6002810154600160a01b900460ff16156104da576040805162461bcd60e51b815260206004820152601860248201527f52657175657374206d75737420626520636f6d706c6574650000000000000000604482015290519081900360640190fd5b600281015460018201546040516001600160a01b039092169181156108fc0291906000818181858888f1935050505015801561051a573d6000803e3d6000fd5b50600201805460ff60a01b1916600160a01b17905550565b60046020526000908152604090205460ff1681565b6000545b90565b60025460005460035460015492933031936001600160a01b031690565b6001546001600160a01b031681565b6000818154811061058757fe5b60009182526020918290206005919091020180546040805160026001841615610100026000190190931692909204601f8101859004850283018501909152808252919350918391908301828280156106205780601f106105f557610100808354040283529160200191610620565b820191906000526020600020905b81548152906001019060200180831161060357829003601f168201915b5050505060018301546002840154600390940154929390926001600160a01b0382169250600160a01b90910460ff169085565b60035481565b6001546001600160a01b031633146106b4576040805162461bcd60e51b815260206004820152601960248201527829b2b73232b91034b9903737ba103a34329036b0b730b3b2b960391b604482015290519081900360640190fd5b6106bc610927565b506040805160a08101825284815260208082018590526001600160a01b03841692820192909252600060608201819052608082018190528054600181018083559180528251805193949293859360059093027f290decd9548b62a8d60345a988386fc84ba6bc95484008f6362f93160ef3e563019261073f928492910190610961565b5060208201516001820155604082015160028201805460608501511515600160a01b0260ff60a01b196001600160a01b039094166001600160a01b031990921691909117929092169190911790556080909101516003909101555050505050565b60025481565b60025434116107fc576040805162461bcd60e51b815260206004820181905260248201527f4d696e696d756d20636f6e747269627574696f6e206973207265717569726564604482015290519081900360640190fd5b336000908152600460205260409020805460ff19166001908117909155600380549091019055565b600080828154811061083257fe5b6000918252602080832033845260049091526040909220546005909102909101915060ff166108a8576040805162461bcd60e51b815260206004820152601d60248201527f53656e646572206e6f742065786973747320617320617070726f766572000000604482015290519081900360640190fd5b33600090815260048201602052604090205460ff16156108f95760405162461bcd60e51b81526004018080602001828103825260228152602001806109fa6022913960400191505060405180910390fd5b3360009081526004820160205260409020805460ff1916600190811790915560039091018054909101905550565b6040518060a00160405280606081526020016000815260200160006001600160a01b03168152602001600015158152602001600081525090565b828054600181600116156101000203166002900490600052602060002090601f016020900481019282601f106109a257805160ff19168380011785556109cf565b828001600101855582156109cf579182015b828111156109cf5782518255916020019190600101906109b4565b506109db9291506109df565b5090565b61054b91905b808211156109db57600081556001016109e556fe53656e6465722065786973747320696e207265717565737420617070726f76616c73a265627a7a72315820e949b9d6d6887b994112541e8b66c87f40ddbbac30644ba5d7259088a1cf498064736f6c634300050c0032a265627a7a72315820722809882ec567784987b598e34c4013b88a625f609ed2b493ab4bcea62e182364736f6c634300050c0032",
+  "sourceMap": "51:337:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;51:337:1;;;;;;;",
+  "deployedSourceMap": "51:337:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;51:337:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;80:35;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;80:35:1;;:::i;:::-;;;;-1:-1:-1;;;;;80:35:1;;;;;;;;;;;;;;279:107;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;279:107:1;;;;;;;;;;;;;;;;;120:155;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;120:155:1;;:::i;:::-;;80:35;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;80:35:1;;-1:-1:-1;80:35:1;:::o;279:107::-;332:17;364;357:24;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;357:24:1;;;;;;;;;;;;;;;;;;;;;;;279:107;:::o;120:155::-;172:20;208:8;218:10;195:34;;;;;:::i;:::-;;;;-1:-1:-1;;;;;195:34:1;;;;;;;;;;;;;;-1:-1:-1;195:34:1;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;-1:-1;235:17:1;27:10:-1;;39:1;23:18;;45:23;;235:35:1;;;;;;;-1:-1:-1;;;;;;235:35:1;-1:-1:-1;;;;;235:35:1;;;;;;;;;;-1:-1:-1;;120:155:1:o;51:337::-;;;;;;;;:::o",
+  "source": "pragma solidity^0.5.11;\n\nimport \"./Campaign.sol\";\n\ncontract CampaignFactory {\n  Campaign[] public deployedCampaigns;\n\n  function createCampaign(uint _minimum) public {\n    Campaign newCampaign = new Campaign(_minimum, msg.sender);\n    deployedCampaigns.push(newCampaign);\n  }\n\n  function getDeployedCampaigns() public view returns (Campaign[] memory) {\n    return deployedCampaigns;\n  }\n}\n",
   "sourcePath": "/home/seb/Github/dappstarter/contracts/CampaignFactory.sol",
   "ast": {
     "absolutePath": "/home/seb/Github/dappstarter/contracts/CampaignFactory.sol",
     "exportedSymbols": {
       "CampaignFactory": [
-        236
+        270
       ]
     },
-    "id": 237,
+    "id": 271,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -30,32 +82,438 @@
         "src": "0:23:1"
       },
       {
+        "absolutePath": "/home/seb/Github/dappstarter/contracts/Campaign.sol",
+        "file": "./Campaign.sol",
+        "id": 236,
+        "nodeType": "ImportDirective",
+        "scope": 271,
+        "sourceUnit": 234,
+        "src": "25:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
         "baseContracts": [],
-        "contractDependencies": [],
+        "contractDependencies": [
+          233
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 236,
+        "id": 270,
         "linearizedBaseContracts": [
-          236
+          270
         ],
         "name": "CampaignFactory",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 237,
-        "src": "25:31:1"
+        "nodes": [
+          {
+            "constant": false,
+            "id": 239,
+            "name": "deployedCampaigns",
+            "nodeType": "VariableDeclaration",
+            "scope": 270,
+            "src": "80:35:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage",
+              "typeString": "contract Campaign[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 237,
+                "name": "Campaign",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 233,
+                "src": "80:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Campaign_$233",
+                  "typeString": "contract Campaign"
+                }
+              },
+              "id": 238,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "80:10:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage_ptr",
+                "typeString": "contract Campaign[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 259,
+              "nodeType": "Block",
+              "src": "166:109:1",
+              "statements": [
+                {
+                  "assignments": [
+                    245
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 245,
+                      "name": "newCampaign",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 259,
+                      "src": "172:20:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Campaign_$233",
+                        "typeString": "contract Campaign"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 244,
+                        "name": "Campaign",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 233,
+                        "src": "172:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 252,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 248,
+                        "name": "_minimum",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 241,
+                        "src": "208:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 249,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 342,
+                          "src": "218:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 250,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "218:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 247,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "195:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_address_$returns$_t_contract$_Campaign_$233_$",
+                        "typeString": "function (uint256,address) returns (contract Campaign)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 246,
+                        "name": "Campaign",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 233,
+                        "src": "199:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      }
+                    },
+                    "id": 251,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "195:34:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Campaign_$233",
+                      "typeString": "contract Campaign"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "172:57:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 256,
+                        "name": "newCampaign",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 245,
+                        "src": "258:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 253,
+                        "name": "deployedCampaigns",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 239,
+                        "src": "235:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage",
+                          "typeString": "contract Campaign[] storage ref"
+                        }
+                      },
+                      "id": 255,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "235:22:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Campaign_$233_$returns$_t_uint256_$",
+                        "typeString": "function (contract Campaign) returns (uint256)"
+                      }
+                    },
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "235:35:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 258,
+                  "nodeType": "ExpressionStatement",
+                  "src": "235:35:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 260,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createCampaign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 242,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 241,
+                  "name": "_minimum",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 260,
+                  "src": "144:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 240,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "144:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "143:15:1"
+            },
+            "returnParameters": {
+              "id": 243,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "166:0:1"
+            },
+            "scope": 270,
+            "src": "120:155:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 268,
+              "nodeType": "Block",
+              "src": "351:35:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 266,
+                    "name": "deployedCampaigns",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 239,
+                    "src": "364:17:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage",
+                      "typeString": "contract Campaign[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 265,
+                  "id": 267,
+                  "nodeType": "Return",
+                  "src": "357:24:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 269,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDeployedCampaigns",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 261,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "308:2:1"
+            },
+            "returnParameters": {
+              "id": 265,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 264,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 269,
+                  "src": "332:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_memory_ptr",
+                    "typeString": "contract Campaign[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 262,
+                      "name": "Campaign",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 233,
+                      "src": "332:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Campaign_$233",
+                        "typeString": "contract Campaign"
+                      }
+                    },
+                    "id": 263,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "332:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage_ptr",
+                      "typeString": "contract Campaign[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "331:19:1"
+            },
+            "scope": 270,
+            "src": "279:107:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 271,
+        "src": "51:337:1"
       }
     ],
-    "src": "0:56:1"
+    "src": "0:389:1"
   },
   "legacyAST": {
     "absolutePath": "/home/seb/Github/dappstarter/contracts/CampaignFactory.sol",
     "exportedSymbols": {
       "CampaignFactory": [
-        236
+        270
       ]
     },
-    "id": 237,
+    "id": 271,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -70,23 +528,429 @@
         "src": "0:23:1"
       },
       {
+        "absolutePath": "/home/seb/Github/dappstarter/contracts/Campaign.sol",
+        "file": "./Campaign.sol",
+        "id": 236,
+        "nodeType": "ImportDirective",
+        "scope": 271,
+        "sourceUnit": 234,
+        "src": "25:24:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
         "baseContracts": [],
-        "contractDependencies": [],
+        "contractDependencies": [
+          233
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 236,
+        "id": 270,
         "linearizedBaseContracts": [
-          236
+          270
         ],
         "name": "CampaignFactory",
         "nodeType": "ContractDefinition",
-        "nodes": [],
-        "scope": 237,
-        "src": "25:31:1"
+        "nodes": [
+          {
+            "constant": false,
+            "id": 239,
+            "name": "deployedCampaigns",
+            "nodeType": "VariableDeclaration",
+            "scope": 270,
+            "src": "80:35:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage",
+              "typeString": "contract Campaign[]"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 237,
+                "name": "Campaign",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 233,
+                "src": "80:8:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_contract$_Campaign_$233",
+                  "typeString": "contract Campaign"
+                }
+              },
+              "id": 238,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "80:10:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage_ptr",
+                "typeString": "contract Campaign[]"
+              }
+            },
+            "value": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 259,
+              "nodeType": "Block",
+              "src": "166:109:1",
+              "statements": [
+                {
+                  "assignments": [
+                    245
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 245,
+                      "name": "newCampaign",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 259,
+                      "src": "172:20:1",
+                      "stateVariable": false,
+                      "storageLocation": "default",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Campaign_$233",
+                        "typeString": "contract Campaign"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 244,
+                        "name": "Campaign",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 233,
+                        "src": "172:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 252,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 248,
+                        "name": "_minimum",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 241,
+                        "src": "208:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 249,
+                          "name": "msg",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 342,
+                          "src": "218:3:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_magic_message",
+                            "typeString": "msg"
+                          }
+                        },
+                        "id": 250,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "lValueRequested": false,
+                        "memberName": "sender",
+                        "nodeType": "MemberAccess",
+                        "referencedDeclaration": null,
+                        "src": "218:10:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        {
+                          "typeIdentifier": "t_address_payable",
+                          "typeString": "address payable"
+                        }
+                      ],
+                      "id": 247,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "nodeType": "NewExpression",
+                      "src": "195:12:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_creation_nonpayable$_t_uint256_$_t_address_$returns$_t_contract$_Campaign_$233_$",
+                        "typeString": "function (uint256,address) returns (contract Campaign)"
+                      },
+                      "typeName": {
+                        "contractScope": null,
+                        "id": 246,
+                        "name": "Campaign",
+                        "nodeType": "UserDefinedTypeName",
+                        "referencedDeclaration": 233,
+                        "src": "199:8:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      }
+                    },
+                    "id": 251,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "195:34:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_contract$_Campaign_$233",
+                      "typeString": "contract Campaign"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "172:57:1"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 256,
+                        "name": "newCampaign",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 245,
+                        "src": "258:11:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_contract$_Campaign_$233",
+                          "typeString": "contract Campaign"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 253,
+                        "name": "deployedCampaigns",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 239,
+                        "src": "235:17:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage",
+                          "typeString": "contract Campaign[] storage ref"
+                        }
+                      },
+                      "id": 255,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "235:22:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_contract$_Campaign_$233_$returns$_t_uint256_$",
+                        "typeString": "function (contract Campaign) returns (uint256)"
+                      }
+                    },
+                    "id": 257,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "235:35:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 258,
+                  "nodeType": "ExpressionStatement",
+                  "src": "235:35:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 260,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "createCampaign",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 242,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 241,
+                  "name": "_minimum",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 260,
+                  "src": "144:13:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 240,
+                    "name": "uint",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "144:4:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "143:15:1"
+            },
+            "returnParameters": {
+              "id": 243,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "166:0:1"
+            },
+            "scope": 270,
+            "src": "120:155:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 268,
+              "nodeType": "Block",
+              "src": "351:35:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 266,
+                    "name": "deployedCampaigns",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 239,
+                    "src": "364:17:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage",
+                      "typeString": "contract Campaign[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 265,
+                  "id": 267,
+                  "nodeType": "Return",
+                  "src": "357:24:1"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 269,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDeployedCampaigns",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 261,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "308:2:1"
+            },
+            "returnParameters": {
+              "id": 265,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 264,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 269,
+                  "src": "332:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_memory_ptr",
+                    "typeString": "contract Campaign[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "contractScope": null,
+                      "id": 262,
+                      "name": "Campaign",
+                      "nodeType": "UserDefinedTypeName",
+                      "referencedDeclaration": 233,
+                      "src": "332:8:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_contract$_Campaign_$233",
+                        "typeString": "contract Campaign"
+                      }
+                    },
+                    "id": 263,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "332:10:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_contract$_Campaign_$233_$dyn_storage_ptr",
+                      "typeString": "contract Campaign[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "331:19:1"
+            },
+            "scope": 270,
+            "src": "279:107:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 271,
+        "src": "51:337:1"
       }
     ],
-    "src": "0:56:1"
+    "src": "0:389:1"
   },
   "compiler": {
     "name": "solc",
@@ -94,7 +958,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.20",
-  "updatedAt": "2019-12-30T20:55:47.960Z",
+  "updatedAt": "2019-12-31T19:47:10.263Z",
   "devdoc": {
     "methods": {}
   },

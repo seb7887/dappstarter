@@ -2,7 +2,7 @@ const Campaign = artifacts.require('./Campaign')
 
 contract('Campaign', accounts => {
   let campaign
-  
+
   beforeEach(async () => {
     campaign = await Campaign.deployed()
   })
@@ -15,7 +15,7 @@ contract('Campaign', accounts => {
   it('allows people to contribute money and marks them as approvers', async () => {
     await campaign.contribute({ from: accounts[1], value: '200' })
     const isContributor = await campaign.approvers(accounts[1])
-    
+
     assert(isContributor)
   })
 
@@ -29,18 +29,29 @@ contract('Campaign', accounts => {
   })
 
   it('allows a manager to make a payment request', async () => {
-    await campaign.createRequest('Buy batteries', '100', accounts[1], { from: accounts[0], gas: '1000000' })
+    await campaign.createRequest('Buy batteries', '100', accounts[1], {
+      from: accounts[0],
+      gas: '1000000'
+    })
     const request = await campaign.requests(0)
 
     assert.equal('Buy batteries', request.description)
   })
 
   it('processes requests', async () => {
-    await campaign.contribute({ from: accounts[0], value: web3.utils.toWei('10', 'ether') })
-    await campaign.createRequest('A', web3.utils.toWei('5', 'ether'), accounts[1], {
+    await campaign.contribute({
       from: accounts[0],
-      gas: '1000000'
+      value: web3.utils.toWei('10', 'ether')
     })
+    await campaign.createRequest(
+      'A',
+      web3.utils.toWei('5', 'ether'),
+      accounts[1],
+      {
+        from: accounts[0],
+        gas: '1000000'
+      }
+    )
 
     await campaign.approveRequest(0, { from: accounts[0], gas: '1000000' })
     await campaign.approveRequest(0, { from: accounts[1], gas: '1000000' })
