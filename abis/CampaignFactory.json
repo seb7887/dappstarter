@@ -960,12 +960,12 @@
     "5777": {
       "events": {},
       "links": {},
-      "address": "0xE528ee5713734e4804818F74112e978780d8F74a",
-      "transactionHash": "0xa4bc4bfb77d87d82dc9e6dd50ad49be52adb0ca71d87869707f74f7fe8d421fe"
+      "address": "0x63A23D33e7032C0499A36d140Bf305C8D6baafbe",
+      "transactionHash": "0xa42a9898e3e6e0b19f39082267ef4d06ec3b0d23105c08573cf9c87e619735d3"
     }
   },
   "schemaVersion": "3.0.20",
-  "updatedAt": "2019-12-31T22:32:28.200Z",
+  "updatedAt": "2020-01-02T22:17:33.795Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}

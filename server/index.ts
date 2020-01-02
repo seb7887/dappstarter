@@ -2,12 +2,14 @@ import next from 'next'
 import express, { Request, Response } from 'express'
 import http from 'http'
 
+import routes from './routes'
+
 const app = express()
 
 const PORT = parseInt(process.env.PORT || '3000', 10)
 const dev = process.env.NODE_ENV !== 'production'
 const nextApp = next({ dev })
-const handle = nextApp.getRequestHandler()
+const handle = routes.getRequestHandler(nextApp)
 
 const server = http.createServer(app)
 

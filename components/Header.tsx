@@ -1,19 +1,20 @@
 import React from 'react'
-import Link from 'next/link'
 import { Menu } from 'semantic-ui-react'
+
+import { Link } from '../server/routes'
 
 export const Header: React.FC = () => (
   <Menu style={{ marginTop: '10px' }}>
-    <Link href='/'>
+    <Link route='/'>
       <a className='item'>Dappstarter</a>
     </Link>
 
     <Menu.Menu position="right">
-      <Link href="/">
+      <Link route="/">
         <a className="item">Campaigns</a>
       </Link>
 
-      <Link href="/campaigns/new">
+      <Link route="/campaigns/new">
         <a className="item">+</a>
       </Link>
     </Menu.Menu>

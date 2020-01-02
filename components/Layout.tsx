@@ -11,7 +11,7 @@ interface Props {
 export const Layout: React.FC<Props> = props => (
   <Container>
     <Head>
-      <title>{`Dappstarter | ${props.title}` || 'Dappstarter'}</title>
+      <title>{props.title ? `Dappstarter | ${props.title}` : 'Dappstarter'}</title>
       <link
         rel="stylesheet"
         href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"
