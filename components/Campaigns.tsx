@@ -8,7 +8,7 @@ interface Props {
 }
 
 export const Campaigns: React.FC<Props> = ({ campaigns }) => {
-  const items = campaigns.map((address: string) => ({
+  const items =  campaigns ? campaigns.map((address: string) => ({
     header: address,
     description: (
       <Link route={`/campaigns/${address}`}>
@@ -16,7 +16,7 @@ export const Campaigns: React.FC<Props> = ({ campaigns }) => {
       </Link>
     ),
     fluid: true
-  }))
+  })) : []
   
-  return  campaigns.length ? <Card.Group items={items} /> : <h4>No campaigns available</h4>
+  return  items.length ? <Card.Group items={items} /> : <h4>No campaigns available</h4>
 }

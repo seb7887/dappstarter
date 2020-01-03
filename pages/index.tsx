@@ -3,11 +3,11 @@ import { NextPage } from 'next'
 import { Button } from 'semantic-ui-react'
 
 import { Link } from '../server/routes'
-import { getFactory } from '../blockchain'
+import { getFactory, web3 } from '../blockchain'
 import { Layout, Campaigns } from '../components'
 
 interface Props {
-  campaigns: any
+  campaigns?: any
 }
 
 const Index: NextPage<Props> = ({ campaigns }) => (
@@ -32,7 +32,16 @@ const Index: NextPage<Props> = ({ campaigns }) => (
 )
 
 Index.getInitialProps = async () => {
-  const factory = await getFactory()
+  let factory
+
+  if (typeof window !== 'undefined') {
+    const res = await fetch('/api/factory')
+    const { options } = await res.json()
+    factory = new web3.eth.Contract(options.jsonInterface, options.address)
+  } else {
+    factory = await getFactory()
+  }
+
   const campaigns = await factory.methods.getDeployedCampaigns().call()
 
   return { campaigns }

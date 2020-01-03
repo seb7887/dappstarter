@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { NextPage } from 'next'
-import { Form, Button, Input, Message } from 'semantic-ui-react'
+import { Form, Button, Input, Message, Loader } from 'semantic-ui-react'
 
 import { Router } from '../../server/routes'
 import { web3, getFactory } from '../../blockchain'
 import { Layout } from '../../components'
 
 interface Props {
-  factory: any
+  factory?: any
 }
 
 const CampaignNew: NextPage<Props> = ({ factory }) => {
@@ -39,11 +39,14 @@ const CampaignNew: NextPage<Props> = ({ factory }) => {
     setLoading(false)
   }
 
+  console.log(factory)
+
   return (
     <Layout title="New Campaign">
       <h3>Create Campaign</h3>
 
-      <Form onSubmit={onSubmit} error={!!errorMessage}>
+      {factory ? (
+        <Form onSubmit={onSubmit} error={!!errorMessage}>
         <Form.Field>
           <label>Minimum Contribution</label>
           <Input
@@ -59,12 +62,24 @@ const CampaignNew: NextPage<Props> = ({ factory }) => {
           Create!
         </Button>
       </Form>
+      ) : (
+        <Loader />
+      )}
+      
     </Layout>
   )
 }
 
 CampaignNew.getInitialProps = async () => {
-  const factory = await getFactory()
+  let factory
+
+  if (typeof window !== 'undefined') {
+    const res = await fetch('/api/factory')
+    const { options } = await res.json()
+    factory = new web3.eth.Contract(options.jsonInterface, options.address)
+  } else {
+    factory = await getFactory()
+  }
 
   return { factory }
 }

@@ -2,6 +2,8 @@ import next from 'next'
 import express, { Request, Response } from 'express'
 import http from 'http'
 
+import { getFactory } from '../blockchain'
+
 import routes from './routes'
 
 const app = express()
@@ -15,6 +17,13 @@ const server = http.createServer(app)
 
 nextApp.prepare().then(() => {
   app.get('/_next/*', (req: Request, res: Response) => handle(req, res))
+
+  // @ts-ignore
+  app.get('/api/factory', async (req: Request, res: Response) => {
+    const factory = await getFactory()
+
+    return res.json(factory)
+  })
 
   app.get('*', (req: Request, res: Response) => handle(req, res))
 
