@@ -1,6 +1,7 @@
 import Web3 from 'web3'
 
-const localProvider = process.env.PROVIDER_URL || 'http://localhost:7545'
+const localProvider = process.env.NODE_ENV !== 'production' ? 
+  'http://localhost:7545' : 'https://rinkeby.infura.io/v3/2e03a2df2ad44957947e21f25ce9b152' 
 let web3Instance
 
 if (typeof window !== 'undefined') {

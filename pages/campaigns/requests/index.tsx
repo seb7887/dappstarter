@@ -4,7 +4,7 @@ import { Button, Table } from 'semantic-ui-react'
 
 import { Link } from '../../../server/routes'
 import { campaign, web3 } from '../../../blockchain'
-import { Layout } from '../../../components'
+import { Layout, RequestRow } from '../../../components'
 
 interface Props {
   address: any
@@ -13,11 +13,17 @@ interface Props {
   approversCount: any
 }
 
-// @ts-ignore
 const RequestIndex: NextPage<Props> = ({ address, requests, requestCount, approversCount }) => {
   const renderRows = () => {
-    // @ts-ignore
-    return requests.map((request: any, index: any) => <div key={index}>Replace me</div>)
+    return requests.map((request: any, index: any) => (
+      <RequestRow
+        key={index}
+        id={index}
+        request={request}
+        address={address}
+        approversCount={approversCount}
+      />
+    ))
   }
 
   return (
