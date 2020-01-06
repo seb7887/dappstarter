@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import { NextPage } from 'next'
+import Router, { useRouter } from 'next/router'
+import Link from 'next/link'
 import { Form, Input, Message, Button } from 'semantic-ui-react'
 
-import { Link, Router } from '../../../server/routes'
 import { campaign, web3 } from '../../../blockchain'
 import { Layout } from '../../../components'
 
-interface Props {
-  address: any
-}
-
-const NewRequest: NextPage<Props> = props => {
+const NewRequest: NextPage = () => {
+  const router = useRouter()
+  const { address } = router.query
   const [value, setValue] = useState<string>('')
   const [description, setDescription] = useState<string>('')
   const [recipient, setRecipient] = useState<string>('')
@@ -20,7 +19,7 @@ const NewRequest: NextPage<Props> = props => {
   const onSubmit = async (e: React.SyntheticEvent) => {
     e.preventDefault()
 
-    const currentCampaign = campaign(web3, props.address)
+    const currentCampaign = campaign(web3, address as string)
     setLoading(true)
     setErrorMessage('')
 
@@ -30,7 +29,7 @@ const NewRequest: NextPage<Props> = props => {
         .createRequest(description, web3.utils.toWei(value, 'ether'), recipient)
         .send({ from: accounts[0] })
 
-      Router.push(`/campaigns/${props.address}/requests`)
+      Router.push(`/requests/${address}`)
     } catch (err) {
       setErrorMessage(err.message)
     }
@@ -52,7 +51,7 @@ const NewRequest: NextPage<Props> = props => {
 
   return (
     <Layout>
-      <Link route={`/campaigns/${props.address}/requests`}>
+      <Link href='/requests/[address]' as={`/requests/${address}`}>
         <a>Back</a>
       </Link>
       <h3>Create a Request</h3>
@@ -88,14 +87,6 @@ const NewRequest: NextPage<Props> = props => {
       </Form>
     </Layout>
   )
-}
-
-NewRequest.getInitialProps = async props => {
-  const { address } = props.query
-
-  return {
-    address
-  }
 }
 
 export default NewRequest

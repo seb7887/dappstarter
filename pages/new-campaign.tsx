@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import { NextPage } from 'next'
+import Router from 'next/router'
 import { Form, Button, Input, Message, Loader } from 'semantic-ui-react'
 
-import { Router } from '../../server/routes'
-import { web3, getFactory } from '../../blockchain'
-import { Layout } from '../../components'
+import { web3, getFactory } from '../blockchain'
+import { Layout } from '../components'
 
 interface Props {
   factory?: any
 }
 
-const CampaignNew: NextPage<Props> = ({ factory }) => {
+const NewCampaign: NextPage<Props> = ({ factory }) => {
   const [minimumContribution, setMinimum] = useState<string>('')
   const [errorMessage, setErrorMessage] = useState<string>('')
   const [loading, setLoading] = useState<boolean>(false)
@@ -31,7 +31,7 @@ const CampaignNew: NextPage<Props> = ({ factory }) => {
         .createCampaign(minimumContribution)
         .send({ from: accounts[0] })
 
-      Router.pushRoute('/')
+      Router.push('/')
     } catch (err) {
       setErrorMessage(err.message)
     }
@@ -70,7 +70,7 @@ const CampaignNew: NextPage<Props> = ({ factory }) => {
   )
 }
 
-CampaignNew.getInitialProps = async () => {
+NewCampaign.getInitialProps = async () => {
   let factory
 
   if (typeof window !== 'undefined') {
@@ -84,4 +84,4 @@ CampaignNew.getInitialProps = async () => {
   return { factory }
 }
 
-export default CampaignNew
+export default NewCampaign

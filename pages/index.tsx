@@ -1,8 +1,8 @@
 import React from 'react'
 import { NextPage } from 'next'
+import Link from 'next/link'
 import { Button } from 'semantic-ui-react'
 
-import { Link } from '../server/routes'
 import { getFactory, web3 } from '../blockchain'
 import { Layout, Campaigns } from '../components'
 
@@ -15,7 +15,7 @@ const Index: NextPage<Props> = ({ campaigns }) => (
     <div>
       <h3>Open Campaigns</h3>
 
-      <Link route="/campaigns/new">
+      <Link href="/new-campaign">
         <a>
           <Button 
             floated="right"

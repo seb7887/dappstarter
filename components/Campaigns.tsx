@@ -1,7 +1,6 @@
 import React from 'react'
+import Link from 'next/link'
 import { Card } from 'semantic-ui-react'
-
-import { Link } from '../server/routes'
 
 interface Props {
   campaigns: any
@@ -11,7 +10,7 @@ export const Campaigns: React.FC<Props> = ({ campaigns }) => {
   const items =  campaigns ? campaigns.map((address: string) => ({
     header: address,
     description: (
-      <Link route={`/campaigns/${address}`}>
+      <Link href='/campaign/[address]' as={`/campaign/${address}`}>
         <a>View Campaign</a>
       </Link>
     ),

@@ -1,6 +1,5 @@
 {
-  "version": 1.0,
+  "version": 2.0,
   "name": "dappstarter",
-  "alias": "dappstarter.now.sh",
-  "dotenv": true
+  "alias": "dappstarter.now.sh"
 }

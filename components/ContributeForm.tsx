@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
+import Router from 'next/router'
 import { Form, Input, Message, Button } from 'semantic-ui-react'
 
-import { Router } from '../server/routes'
 import { campaign, web3 } from '../blockchain'
 
 interface Props {
@@ -31,7 +31,7 @@ export const ContributeForm: React.FC<Props> = ({ address }) => {
         value: web3.utils.toWei(value, 'ether')
       })
 
-      Router.replaceRoute(`/campaigns/${address}`)
+      Router.push(`/campaign/${address}`)
     } catch (err) {
       setErrorMessage(err.message)
     }
