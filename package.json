@@ -40,7 +40,7 @@
     "typescript": "^3.7.4"
   },
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "micro": "^9.3.5-canary.3",
     "next": "^9.3.2",
     "next-routes": "^1.4.2",
